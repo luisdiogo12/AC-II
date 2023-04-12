@@ -1,29 +1,30 @@
+
 #include <detpic32.h>
+
+void delay(unsigned int ms)
+{
+	resetCoreTimer();
+	while (readCoreTimer() < 20000 * ms)
+		;
+}
 
 int main(void)
 {
+	// Configure port RE6-RE3 as output
+	TRISEbits.TRISE6 = 0;
+	TRISEbits.TRISE5 = 0;
+	TRISEbits.TRISE4 = 0;
+	TRISEbits.TRISE3 = 0;
 
-	void delay(int ms)
-	{
-		for (; ms > 0; ms--)
-		{
-			resetCoreTimer();
-			readCoreTimer();
-			while (readCoreTimer() < 20000)
-				;
-		}
-	}
-
-	LATE = LATE & 0xFFF0;	// Force 0 as the outpu
-	TRISE &= 0xFF87;		// forcar com que os bits 3-6 sejam 0
-	int cont = 0;
+	int count = 0;
 
 	while (1)
-	{	//POR OS BITS  do LATE 3-6 A 0 | dar shift de 3 para a esquerda para o count ficar registado nos bits 3-6
-		LATE = (LATE & 0xFF87) | ((cont & 0x000F) << 3);
+	{
+		LATE = (LATE & 0xFF87) | (count << 3);
+
 		delay(250);
-		cont++;
-		if (cont >= 10) {cont = 0};
+
+		count = (count + 1) % 10;// a cada 10 contagens count fica = 0
 	}
 	return 0;
 }

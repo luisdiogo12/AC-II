@@ -1,0 +1,24 @@
+GAS LISTING nostack.s 			page 1
+
+
+DEFINED SYMBOLS
+           nostack.s:1      *ABS*:000000000000000b READ_CORE_TIMER
+           nostack.s:2      *ABS*:000000000000000c RESET_CORE_TIMER
+           nostack.s:3      *ABS*:000000000000bf88 BASE
+           nostack.s:4      *ABS*:0000000000006100 TRISE
+           nostack.s:5      *ABS*:0000000000006110 PORTE
+           nostack.s:6      *ABS*:0000000000006120 LATE
+           nostack.s:7      *ABS*:0000000000006040 TRISB
+           nostack.s:8      *ABS*:0000000000006050 PORTB
+           nostack.s:9      *ABS*:0000000000006060 LATB
+           nostack.s:18     .text:0000000000000000 main
+           nostack.s:38     .text:0000000000000038 counter4bits
+           nostack.s:35     .text:0000000000000030 endc
+           nostack.s:45     .text:0000000000000058 if
+           nostack.s:49     .text:0000000000000064 loop
+           nostack.s:50     .text:0000000000000064 write
+           nostack.s:62     .text:000000000000008c delay
+           nostack.s:66     .text:0000000000000094 while
+           nostack.s:74     .text:00000000000000b8 endw
+
+NO UNDEFINED SYMBOLS

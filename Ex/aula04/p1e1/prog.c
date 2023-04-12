@@ -1,21 +1,17 @@
+// O objetivo do programa seguinte é fazer o toggle do bit 14 do porto C, ao qual está ligado um
+//LED na placa DETPIC32, a uma frequência de 1 Hz(usando a função delay() já apresentada na aula anterior)
 #include <detpic32.h>
 
 void delay(int ms)
 {
-	for (; ms > 0; ms--)
-	{
-		resetCoreTimer();
-		readCoreTimer();
-		while (readCoreTimer() < 20000)
-			;
-	}
+	resetCoreTimer();
+	while (readCoreTimer() < 20000 * ms);
 }
 
 int main(void)
 {
 
 	// Configure port RC14 as output
-	LATCbits.LATC14 = 0; // Reset RC14 port value
 	TRISCbits.TRISC14 = 0; // Configure RC14 port as output
 	while (1)
 	{

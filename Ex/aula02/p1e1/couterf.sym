@@ -1,0 +1,11 @@
+GAS LISTING couterf.s 			page 1
+
+
+DEFINED SYMBOLS
+           couterf.s:2      *ABS*:000000000000000b READ_CORE_TIMER
+           couterf.s:3      *ABS*:000000000000000c RESET_CORE_TIMER
+           couterf.s:9      .text:0000000000000000 main
+           couterf.s:12     .text:0000000000000008 while
+           couterf.s:20     .text:000000000000002c endw
+
+NO UNDEFINED SYMBOLS

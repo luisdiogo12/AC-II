@@ -32,7 +32,7 @@ while1:
 	la		$v0 , READ_CORE_TIMER
 	syscall
 	move	$t1 , $v0
-	bge		$t1 , 200000 , endw1	#branch se readCoreTimer() < 200000
+	bge		$t1 , 200000 , endw1	#branch se readCoreTimer() < 200000, a cada milisegundo
 	j		while1					#se n der brach jump para o while	
 endw1:
 	la		$v0 , PRINT_INT
