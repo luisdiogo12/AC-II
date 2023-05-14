@@ -4,7 +4,7 @@
 int main(void){
 
 	// RB8-RB14 as outputs(leds) and RD5 and RD6 as outputs (para definir os displays a usar)
-	//!: n percebo pq que sao defenidos como outputs sendo que valores são escritos em LATE
+	
 	TRISB = TRISB & 0x80FF;
 	TRISDbits.TRISD5 = 0;
 	TRISDbits.TRISD6 = 1;	// display mais significativo ativo
